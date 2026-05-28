@@ -10,11 +10,21 @@
     "frontendDist": "../dist"
   },
   "app": {
+    "macOSPrivateApi": true,
     "windows": [
       {
         "title": "clippo",
-        "width": 800,
-        "height": 600
+        "width": 500,
+        "height": 300,
+        "resizable": false,
+        "fullscreen": false,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "visible": true,
+        "center": true
+
       }
     ],
     "security": {
