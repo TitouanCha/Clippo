@@ -19,7 +19,7 @@ export function HomePopUp({ activitySelection}: Props) {
             </div>
             <div className="flex flex-row gap-2 w-full justify-center">
               <button className="btn btn-outline btn-warning btn-sm"
-                onClick={() => activitySelection(ScreenEnum.QUIZZ)}
+                onClick={() => activitySelection(ScreenEnum.QUIZZ_MENU)}
               >{ScreenEnum.QUIZZ}</button>
               <button className="btn btn-outline btn-warning btn-sm"
                 onClick={() => activitySelection(ScreenEnum.GAME)}
