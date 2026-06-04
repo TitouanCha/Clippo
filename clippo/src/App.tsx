@@ -9,6 +9,7 @@ import { PanickPopUp } from "./pop-up/panick-popup.tsx";
 import { GamePopUp } from "./pop-up/game-popup.tsx";
 import { QuestionPopUp } from "./pop-up/question-popup.tsx";
 import { QuizzPopUp } from "./pop-up/quizz-popup.tsx";
+import { QuizzDifficultyEnum } from "./enum/quizz-difficulty.enum.ts";
 
 function App() {
   const [screen, setScreen] = useState<ScreenEnum | null>(null);
@@ -67,7 +68,7 @@ function App() {
             <QuizzMenuPopUp activitySelection={activitySelection}/>
           )}
           {screen === ScreenEnum.QUIZZ && (
-            <QuizzPopUp activitySelection={activitySelection}/>
+            <QuizzPopUp difficulty={QuizzDifficultyEnum.NORMAL} activitySelection={activitySelection}/>
           )}
           {screen === ScreenEnum.GAME && (
             <GamePopUp/>

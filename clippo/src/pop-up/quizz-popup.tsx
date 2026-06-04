@@ -3,12 +3,14 @@ import { use, useEffect, useState } from "react";
 import { Question, Quizz } from '../models/quizz.model';
 import { ResponseButtons } from "../components/response-buttons.component";
 import { ScreenEnum } from "../enum/screen.enum";
+import { QuizzDifficultyEnum } from "../enum/quizz-difficulty.enum";
 
 type Props = {
-    activitySelection: (activity: ScreenEnum) => void;
+    activitySelection: (activity: ScreenEnum) => void,
+    difficulty: QuizzDifficultyEnum
 }
 
-export function QuizzPopUp({activitySelection}: Props) {
+export function QuizzPopUp({activitySelection, difficulty}: Props) {
     const [quizz, setQuizz] = useState<Quizz | null>(null);
     const [question, setQuestion] = useState<Question>();
     const [questionTab, setQuestionTab] = useState(["", "", "", ""]);
@@ -23,8 +25,7 @@ export function QuizzPopUp({activitySelection}: Props) {
 
         async function fetchQuizz() {
             await invoke("get_quizz", {
-            category: "tv_cinema",
-            difficulty: "facile",
+            difficulty: difficulty,
             limit: questionsLimit.toString()
             })
             .then((data: any) => {

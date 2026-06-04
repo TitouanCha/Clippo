@@ -8,9 +8,6 @@ pub async fn get_quizz(
     category: Option<String>,
     difficulty: Option<String>
 ) -> Result<Quizz, String> {
-
-    println!("Cmd get_quizz lance");
-
     let service: QuizzService = QuizzService::new();
     service.get_quizz(limit, category, difficulty).await
 }
